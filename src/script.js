@@ -1,9 +1,3 @@
-//to get the info from api
-function info(response) {
-    console.log(response.data);
-}
-axios.get(apiUrl).then(info);
-
 //date and time
 function formatDate (timestamp) {
     let date = new Date(timestamp);
@@ -58,11 +52,8 @@ function showCurrentWeather(response) {
 function searchCity(city) {
     let apiKey = `9a96e3865c186c9fbo4aaef0cdb0e0dt`;
 
-    let apiUrl1 = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl1).then(showCurrentWeather);
-
-    let apiUrl2 = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl2).then(showForecast);
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showCurrentWeather);
 }
 
 function manageSubmit(event) {
