@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather Website</title>
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <div class="weather">
+                <form id="search-form">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="search" placeholder="Enter a city..." class="form-control search-input" id="city-input">
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" value="Search" class="btn btn-primary w-100" id="search-button">
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" value="Current Location" class="btn btn-primary w-100" id="current-location">
+                        </div>
+                    </div>
+                </form>
+                <div class="weatherInfo">
+                    <div class="row">
+                        <div class="col-7">
+                            <h1 id="city">[City Name]</h1> 
+                            <ul>
+                                <li>
+                                    <span id="date">Day, HH:MM,</span>
+                                    <span class="description" id="description">description</span>
+                                </li>
+                                <li>
+                                    <span>
+                                        Humidity: 
+                                        <strong id="humidity">[no]%</strong>
+                                        Wind:
+                                        <strong id="wind">[no]km/h</strong>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-5 justify-content-end">
+                            <div class="temperatureContainer">
+                                <div class="weatherContainer">
+                                    <img src="#" id="current-icon" class="weatherIcon">
+                                    <span class="temperature" id="current-temp">12</span>
+                                    <span class="unit">
+                                        <sup>
+                                            <a href="#" id="celsius" class="active">°C</a>
+                                            |
+                                            <a href="#" id="fahrenheit" class="fahrenheit">°F</a>
+                                        </sup>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row fiveDay" id="fiveDay">
+                    <div class="col p-2">
+                        <img src="#" id="icon-1" class="fiveDayIcon">
+                        <span id="five-day-1">n / n</span>
+                    </div>
+                    <div class="col p-2" id="five-day-2">
+                        <img src="#" id="icon-2" class="fiveDayIcon">
+                        <span id="five-day-2">n / n</span>
+                    </div>
+                    <div class="col p-2" id="five-day-3">
+                        <img src="#" id="icon-3" class="fiveDayIcon">
+                        <span id="five-day-3">n / n</span>
+                    </div>
+                    <div class="col p-2" id="five-day-4">
+                        <img src="#" id="icon-4" class="fiveDayIcon">
+                        <span id="five-day-4">n / n</span>
+                    </div>
+                    <div class="col p-2" id="five-day-5">
+                        <img src="#" id="icon-5" class="fiveDayIcon">
+                        <span id="five-day-5">n / n</span>
+                    </div>
+                </div>
+                <footer>
+                    Coded by: 
+                    <a href="https://github.com/PKuzi01" target="_blank" rel="noopener noreferrer">Philisizwe Kuzwayo</a>
+                    and is 
+                    <a href="https://github.com/PKuzi01/weather-app" target="_blank" rel="noopener noreferrer">open-sourced on GitHub</a>
+                    and
+                    <a href="#" target="_blank" rel="noopener noreferrer">hosted on Netlify</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
