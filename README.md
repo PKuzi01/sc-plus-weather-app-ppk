@@ -1,5 +1,5 @@
 ### SheCodes Plus Final Project: Weather App
-#### Authoured by Philisizwe Kuzwayo
+#### Authored by Philisizwe Kuzwayo
 ---
 
 ##### Duration:
