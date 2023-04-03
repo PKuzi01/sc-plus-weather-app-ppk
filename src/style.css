@@ -39,7 +39,7 @@ footer a {
     
 }
 
-.container {
+.container-fluid {
     max-width: 720px;
     margin: 20px auto;
     padding: 20px;
