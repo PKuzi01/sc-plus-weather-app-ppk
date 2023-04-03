@@ -46,8 +46,6 @@ function showCurrentWeather(response) {
     let icon = document.querySelector("#current-icon");
     icon.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
-    celsiusTemp = response.data.temperature.current;
-
     getForecast(response.data.coordinates);
 }
 
@@ -106,41 +104,11 @@ function manageSubmit(event) {
     searchCity(cityInput);
 }
 
-//celsius to fahrenheit
-function showFahrenheit(event) {
-    event.preventDefault();
-        //possible sol for unit conversion
-        //remove the "active" class from the celsius
-        //celsius.classList.remove("active");
-        //add the "active" class to fahrenheit
-        //fahrenheit.classList.add("active");
-    let temperature = document.querySelector("#current-temp");
-    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    temperature.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function showCelsius(event) {
-    event.preventDefault();
-    let temperature = document.querySelector("#current-temp");
-    temperature.innerHTML = Math.round(celsiusTemp);
-}
-
 //global 
-//fahrenheit to celsius (current)
-let celsiusTemp = null;
-
-
 //for search engine
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", manageSubmit);
 
-//celsius to fahrenheit
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheit);
-
-//fahrenheit to celsius
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", showCelsius);
 
 //default city
 searchCity("Johannesburg");

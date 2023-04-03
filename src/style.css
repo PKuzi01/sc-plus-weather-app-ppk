@@ -109,17 +109,7 @@ footer a {
     position: relative;
     top: -34px;
 }
-.active {
-    color: #000000;
-    cursor: default;
-    text-decoration: none;
 
-}
-
-.active:hover {
-    color: #2c8fcc;
-    text-decoration: underline;
-}
 
 .fahrenheit {
     color: #000000;
