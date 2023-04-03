@@ -52,31 +52,40 @@ function showCurrentWeather(response) {
     getForecast(response.data.coordinates);
 }
 
+//date of forecast
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+    return days[day];
+}
+
 //forecast
 function displayForecast(response) {
-    console.log(response.data.daily);
-    let forecast = document.querySelector("#weather-forecast");
+    console.log(response.data.daily)
+    let forecast = (response.data.daily);
+    let forecastElement = document.querySelector("#weather-forecast");
 
     let forecastHTML = `<div class="row fiveDay" id="fiveDay">`;
 
-    let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
-    days.forEach(function(day){
+    forecast.forEach(function(forecastDay, index) {
+        if (index < 5) {
         forecastHTML = forecastHTML + 
             `
                 <div class="col p-2">
-                    <p class="dateForecast" id="date-forecast">${day}</p>
-                    <img src="#" id="icon" class="fiveDayIcon" width="40">
+                    <p class="dateForecast" id="date-forecast">${formatDay(forecastDay.time)}</p>
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" id="icon" class="fiveDayIcon" width="50">
                     <div class="fiveDay1">
-                        <span id="five-day-max">n°</span>
-                        <span id="five-day-min" class="fiveDayMin">n°</span>
+                        <span id="five-day-max">${Math.round(forecastDay.temperature.maximum)}°</span>
+                        <span id="five-day-min" class="fiveDayMin">${Math.round(forecastDay.temperature.minimum)}°</span>
                     </div>  
                 </div>
-            `;
+           `;} 
     });
 
     forecastHTML = forecastHTML + `</div>`;
-
-    forecast.innerHTML = forecastHTML;
+    forecastElement.innerHTML = forecastHTML;
 }
 
 //getting coords for forecast
