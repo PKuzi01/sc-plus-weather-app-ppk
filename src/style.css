@@ -154,9 +154,21 @@ footer a {
 
 .fiveDay {
     color: #41506b;
-    font-size: 18px;
+    font-size: 18apx;
     font-style: normal;
     font-weight: 700;
     line-height: 1.5;
-    padding-left: 40px;
+}
+
+.fiveDayIcon{
+    margin-bottom: 10px;
+}
+
+.fiveDayMin {
+    opacity: 0.6;
+}
+
+.dateForecast {
+    font-size: 20px;
+    color:#263849;
 }
