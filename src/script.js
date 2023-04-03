@@ -53,7 +53,8 @@ function showCurrentWeather(response) {
 }
 
 //forecast
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
     let forecast = document.querySelector("#weather-forecast");
 
     let forecastHTML = `<div class="row fiveDay" id="fiveDay">`;
@@ -74,7 +75,7 @@ function displayForecast() {
     });
 
     forecastHTML = forecastHTML + `</div>`;
-    
+
     forecast.innerHTML = forecastHTML;
 }
 
@@ -83,7 +84,6 @@ function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = `9a96e3865c186c9fbo4aaef0cdb0e0dt`;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
 }
 
