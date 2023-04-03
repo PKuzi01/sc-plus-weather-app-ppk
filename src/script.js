@@ -25,6 +25,7 @@ function formatDate (timestamp) {
 
 //current temp details
 function showCurrentWeather(response) {
+    console.log(response.data);
     let city = document.querySelector("#city");
     city.innerHTML = response.data.city;
 
@@ -47,6 +48,43 @@ function showCurrentWeather(response) {
     icon.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
     celsiusTemp = response.data.temperature.current;
+
+    getForecast(response.data.coordinates);
+}
+
+//forecast
+function displayForecast() {
+    let forecast = document.querySelector("#weather-forecast");
+
+    let forecastHTML = `<div class="row fiveDay" id="fiveDay">`;
+
+    let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
+    days.forEach(function(day){
+        forecastHTML = forecastHTML + 
+            `
+                <div class="col p-2">
+                    <p class="dateForecast" id="date-forecast">${day}</p>
+                    <img src="#" id="icon" class="fiveDayIcon" width="40">
+                    <div class="fiveDay1">
+                        <span id="five-day-max">n°</span>
+                        <span id="five-day-min" class="fiveDayMin">n°</span>
+                    </div>  
+                </div>
+            `;
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+    
+    forecast.innerHTML = forecastHTML;
+}
+
+//getting coords for forecast
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = `9a96e3865c186c9fbo4aaef0cdb0e0dt`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
 }
 
 function searchCity(city) {
