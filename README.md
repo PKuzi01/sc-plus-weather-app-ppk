@@ -9,7 +9,7 @@
 10/10
 
 ##### Comments:
-It was very challenging to do, but I feel more confident in my ability to create websites. This project took some time, and despite teh frequent frustrion I experience,I still turned out wonderful. Note to self: make as many drafts of your project as you can. No idea is a bad one, and if you think it is, remind yourself that a bad idea is just an idea you have tried out yet.
+It was very challenging to do, but I feel more confident in my ability to create websites. This project took some time, and despite the frequent frustrion I experienced, it still turned out wonderful. Note to self: *make as many drafts of your project as you can. No idea is a bad one, and if you think it is, remind yourself that a bad idea is just an idea you have tried out yet*.
 
 ##### Skills acquired:
 * HTML
