@@ -18,3 +18,4 @@ It was very challenging to do, but I feel more confident in my ability to create
 * Bootstrap
 * The use of APIs
 * Git/Github
+* Netlify hosting
